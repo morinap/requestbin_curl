@@ -51,7 +51,7 @@ command = 'curl -v -X%s ' % (json_data['method'])
 for header_name, header_value in json_data['headers'].iteritems():
 	command += " -H '%s: %s'" % (header_name, header_value.replace("'", "\\'"))
 
-command += " %s" % (req_url)
+command += " '%s'" % (req_url)
 
 # Add body
 body = json_data['body']
